@@ -140,17 +140,6 @@ form .btn-ctr {
   margin-block-start: 28px;
 }
 
-form button {
-  width: 100%;
-  background-color: var(--very-dark-violet);
-  color: var(--white);
-  height: 52px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-transform: capitalize;
-  font-size: clamp(1rem, 0.9278rem + 0.3082vw, 1.125rem);
-}
-
 /* Generic */
 input {
   border: 1px solid var(--light-grayish-violet);
@@ -170,6 +159,13 @@ input[type="number"] {
 @media screen and (min-width: 56.25rem) {
   main {
     flex-direction: row;
+  }
+
+  main .card-ctr {
+    flex-basis: 240px;
+    background-image: url(/images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   main .cards {

@@ -3,6 +3,7 @@ import "./App.css";
 import CardBack from "./components/CardBack";
 import CardForm from "./components/CardForm";
 import CardFront from "./components/CardFront";
+import Success from "./components/Success";
 
 type Inputs = {
   cardName: string;
@@ -13,6 +14,7 @@ type Inputs = {
 
 function App() {
   const [cardNumber, setCardNumber] = useState("");
+  const [submitted, setSubmitted] = useState(false);
   const [card, setCard] = useState<Inputs>({
     cardMonth: "",
     cardName: "",
@@ -35,7 +37,15 @@ function App() {
       </div>
 
       <div className="form-ctr">
-        <CardForm setCardValues={setCard} setMyCardNumber={setCardNumber} />
+        {submitted ? (
+          <Success onContinue={() => setSubmitted(false)} />
+        ) : (
+          <CardForm
+            setCardValues={setCard}
+            setMyCardNumber={setCardNumber}
+            setFormSubmitted={status => setSubmitted(status)}
+          />
+        )}
       </div>
     </main>
   );

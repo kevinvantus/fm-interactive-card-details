@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import styled from "styled-components";
+import { Button } from "./Button";
 
 const ErrorMessage = styled.div`
   margin-block-start: 8px;
@@ -19,6 +20,7 @@ const DateCVCError = styled.div`
 export default function CardForm({
   setMyCardNumber,
   setCardValues,
+  setFormSubmitted,
 }: CardFormProps) {
   const [cardNumber, setCardNumber] = useState("");
   const [form, setForm] = useState<Omit<Inputs, "cardNumber">>({
@@ -35,7 +37,7 @@ export default function CardForm({
 
   const onSubmit: SubmitHandler<Inputs> = data => {
     console.log(data);
-    console.log(errors);
+    setFormSubmitted(true);
   };
 
   const handleCardNumberChange = (e: InputEvent) => {
@@ -224,9 +226,8 @@ export default function CardForm({
       </div>
 
       <div className="btn-ctr">
-        <button type="submit">confirm</button>
+        <Button type="submit">confirm</Button>
       </div>
-      {/* <pre style={{ padding: "1rem", color: "black" }}>{errors}</pre> */}
     </form>
   );
 }
@@ -242,4 +243,5 @@ type Inputs = {
 interface CardFormProps {
   setCardValues: (data: Omit<Inputs, "cardNumber">) => void;
   setMyCardNumber: (value: string) => void;
+  setFormSubmitted: (status: boolean) => void;
 }
