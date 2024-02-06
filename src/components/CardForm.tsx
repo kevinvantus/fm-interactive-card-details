@@ -95,7 +95,7 @@ export default function CardForm({
           aria-invalid={errors.cardName ? "true" : "false"}
           {...register("cardName", {
             required: true,
-            pattern: /[A-Z]{1}[a-z]+[\s]{1}[A-Z]{1}[a-z]+/,
+            pattern: /[A-Za-z]+[\s]{1}[A-Za-z]+/,
             onChange: (e: InputEvent) => handleCardValueChange(e, "cardName"),
           })}
         />

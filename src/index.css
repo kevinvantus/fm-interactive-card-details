@@ -171,6 +171,18 @@ input[type="number"] {
   main .cards {
     display: none;
   }
+
+  main .form-ctr {
+    flex-grow: 1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main .form-ctr form {
+    max-width: 23.75rem;
+  }
 }
 
 @media screen and (min-width: 64rem) {
@@ -209,14 +221,6 @@ input[type="number"] {
     z-index: auto;
     background-image: url(/images/bg-card-front.png);
     padding: 28px 2rem;
-  }
-
-  main .form-ctr {
-    flex-grow: 1;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   main .form-ctr form {

@@ -1,24 +1,6 @@
 import styled from "styled-components";
+import cardLogo from "../assets/card-logo.svg";
 
-const Circles = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-`;
-const Circle = styled.div`
-  border-radius: 50%;
-`;
-const CircleLarge = styled(Circle)`
-  width: clamp(1.875rem, 1.225rem + 2.7735vw, 3rem);
-  aspect-ratio: 1 / 1;
-  background-color: #fff;
-`;
-const CircleSmall = styled(Circle)`
-  border-radius: 50%;
-  width: clamp(0.875rem, 0.7305rem + 0.6163vw, 1.125rem);
-  aspect-ratio: 1 / 1;
-  border: 2px solid #fff;
-`;
 const CardDetails = styled.div`
   margin-block-start: auto;
   color: #fff;
@@ -56,10 +38,7 @@ export default function CardFront({
 
   return (
     <div className="card card-front">
-      <Circles>
-        <CircleLarge />
-        <CircleSmall />
-      </Circles>
+      <img src={cardLogo} alt="" width={84} />
       <CardDetails>
         <CardNumbers>{cardNumber}</CardNumbers>
         <CardNameDate>

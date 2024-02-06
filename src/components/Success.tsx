@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { FaCheck } from "react-icons/fa";
 import { Button } from "./Button";
+import iconComplete from "../assets/icon-complete.svg";
 
 const Container = styled.div`
   margin: auto;
@@ -33,7 +33,7 @@ export default function Success({ onContinue }: { onContinue: () => void }) {
   return (
     <Container>
       <Icon>
-        <FaCheck size={32} />
+        <img src={iconComplete} alt="" />
       </Icon>
       <TextContent>thank you!</TextContent>
       <Para>We've added your card details</Para>
