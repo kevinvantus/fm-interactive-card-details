@@ -11,4 +11,13 @@ export const Button = styled.button`
   font-size: clamp(1rem, 0.9278rem + 0.3082vw, 1.125rem);
   letter-spacing: 1.5px;
   font-weight: 500;
+
+  &:hover {
+    background-color: var(--gradient-to);
+  }
+  &:focus {
+    background-color: var(--gradient-to);
+    outline: 1px solid #000;
+    outline-offset: 2px;
+  }
 `;
